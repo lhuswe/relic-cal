@@ -35,7 +35,7 @@ function firstSentence(text: string): string {
   return (match ? match[0] : trimmed).trim()
 }
 
-/** Kort förvarningsbeskrivning – återanvänder årets variant men bara första meningen. */
+/** Kort förvarningsbeskrivning - återanvänder årets variant men bara första meningen. */
 export function warningDescription(rule: Rule, year: number): string {
   return `Förvarning. ${firstSentence(pickDescription(rule, year))}`
 }

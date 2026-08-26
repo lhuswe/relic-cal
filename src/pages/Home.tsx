@@ -24,7 +24,7 @@ export default function Home() {
         </h1>
         <p className="mt-3 text-brand-600">
           Prenumerera en gång. Deklaration, ISK-mätdatum, däckbyte och annat dyker upp
-          automatiskt, år efter år. Datumen räknas ut – de är inte hårdkodade – så de flyttar
+          automatiskt, år efter år. Datumen räknas ut - de är inte hårdkodade - så de flyttar
           rätt när en deadline hamnar på en helg.
         </p>
       </header>

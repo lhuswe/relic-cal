@@ -10,8 +10,8 @@ export type RuleType =
 export type WeekendRule = 'next_business_day' | 'previous_business_day' | 'none'
 
 export interface MonthDay {
-  month: number // 1–12
-  day: number //   1–31
+  month: number // 1-12
+  day: number //   1-31
 }
 
 /** Typspecifika parametrar. Motsvarar `params jsonb`-kolumnen i `rules`. */

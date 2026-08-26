@@ -46,13 +46,13 @@ export const MODULES: SeedModule[] = [
   {
     id: 'foretagare',
     title: 'Företagare',
-    description: 'Ännu ej verifierat – publiceras inte.',
+    description: 'Ännu ej verifierat - publiceras inte.',
     published: false,
   },
 ]
 
 export const RULES: SeedRule[] = [
-  // ---------- Modul A – Skatt & deklaration (verifierat 2026-08-26) ----------
+  // ---------- Modul A - Skatt & deklaration (verifierat 2026-08-26) ----------
   {
     id: 'skattekonto-extra-inbetalning',
     moduleId: 'skatt-privat',
@@ -143,7 +143,7 @@ export const RULES: SeedRule[] = [
   {
     id: 'kvarskatt-info',
     moduleId: 'skatt-privat',
-    // Rent informationsevent – ingen deadline. Kvarskattens betaldatum är personligt.
+    // Rent informationsevent - ingen deadline. Kvarskattens betaldatum är personligt.
     type: 'fixed_date',
     params: { month: 6, day: 1 },
     weekendRule: 'none',
@@ -158,7 +158,7 @@ export const RULES: SeedRule[] = [
     published: true,
   },
 
-  // ---------- Modul B – Sparande ----------
+  // ---------- Modul B - Sparande ----------
   {
     id: 'isk-matning',
     moduleId: 'sparande',
@@ -196,7 +196,7 @@ export const RULES: SeedRule[] = [
     published: true,
   },
 
-  // ---------- Modul C – Hushåll ----------
+  // ---------- Modul C - Hushåll ----------
   {
     id: 'sommartid',
     moduleId: 'hushall',
@@ -265,7 +265,7 @@ export const RULES: SeedRule[] = [
     published: true,
   },
 
-  // ---------- Modul D – Företagare (OVERIFIERAT, publiceras aldrig) ----------
+  // ---------- Modul D - Företagare (OVERIFIERAT, publiceras aldrig) ----------
   {
     id: 'arbetsgivardeklaration',
     moduleId: 'foretagare',

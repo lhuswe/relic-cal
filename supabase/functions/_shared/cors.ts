@@ -1,5 +1,5 @@
 // Gemensamma svar-headers. Feeds hämtas ofta cross-origin (kalenderklienter, SPA:n),
-// så GET tillåts brett. Ingen känslig data exponeras – bara publika feeds.
+// så GET tillåts brett. Ingen känslig data exponeras - bara publika feeds.
 export const cors = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',

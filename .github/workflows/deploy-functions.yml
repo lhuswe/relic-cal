@@ -1,14 +1,12 @@
 name: Deploy edge functions
 
-# Deployar feed-funktionen till Supabase.
+# Deployar feed-funktionen till Supabase automatiskt när den ändras.
 # Kräver repo-secrets: SUPABASE_ACCESS_TOKEN, SUPABASE_PROJECT_REF.
-#
-# Manuell körning tills secrets är satta. När de finns kan push-triggern nedan
-# aktiveras igen så att funktionen deployas automatiskt när den ändras:
-#   push:
-#     branches: [main]
-#     paths: ['supabase/functions/**']
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'supabase/functions/**'
   workflow_dispatch:
 
 jobs:

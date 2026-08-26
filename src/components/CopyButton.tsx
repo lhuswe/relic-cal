@@ -10,7 +10,7 @@ export default function CopyButton({ value, label = 'Kopiera länk' }: { value: 
       setCopied(true)
       setTimeout(() => setCopied(false), 1800)
     } catch {
-      // Fallback: markera inget – låt användaren kopiera manuellt via länken.
+      // Fallback: markera inget - låt användaren kopiera manuellt via länken.
     }
   }
 

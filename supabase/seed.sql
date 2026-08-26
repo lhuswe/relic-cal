@@ -8,14 +8,14 @@ insert into modules (id, title, description, published, sort_order) values
   ('skatt-privat', 'Skatt & deklaration', 'Deklarationsdatum och skattekonto för privatpersoner.', true,  1),
   ('sparande',     'Sparande',            'ISK-mätdatum och statslåneränta.',                          true,  2),
   ('hushall',      'Hushåll',             'Sommar-/vintertid, vinterdäck och brandvarnare.',           true,  3),
-  ('foretagare',   'Företagare',          'Ännu ej verifierat – publiceras inte.',                     false, 4)
+  ('foretagare',   'Företagare',          'Ännu ej verifierat - publiceras inte.',                     false, 4)
 on conflict (id) do nothing;
 
 -- Fast updated_at ger deterministiska DTSTAMP tills en rad redigeras.
 insert into rules
   (id, module_id, type, params, weekend_rule, warnings, title, descriptions, data, source, verified, published, updated_at)
 values
-  -- ---------- Modul A – Skatt & deklaration ----------
+  -- ---------- Modul A - Skatt & deklaration ----------
   ('skattekonto-extra-inbetalning', 'skatt-privat', 'fixed_date',
    '{"month":2,"day":12}', 'next_business_day', '{7}',
    'Extra inbetalning till skattekontot',
@@ -69,7 +69,7 @@ values
    ],
    '{}', 'https://www.skatteverket.se/privat/skatter/deklaration/skattaterbaringochkvarskatt', '2026-08-26', true, '2026-08-26T00:00:00Z'),
 
-  -- ---------- Modul B – Sparande ----------
+  -- ---------- Modul B - Sparande ----------
   ('isk-matning', 'sparande', 'quarterly',
    '{"months":[1,4,7,10],"day":1}', 'none', '{}',
    '💰 ISK-mätning',
@@ -89,7 +89,7 @@ values
    ],
    '{}', 'https://www.riksgalden.se/sv/var-verksamhet/statslanerantan/', '2026-08-26', true, '2026-08-26T00:00:00Z'),
 
-  -- ---------- Modul C – Hushåll ----------
+  -- ---------- Modul C - Hushåll ----------
   ('sommartid', 'hushall', 'nth_weekday',
    '{"n":"last","weekday":0,"month":3}', 'none', '{}',
    'Sommartid börjar',
@@ -125,7 +125,7 @@ values
    ],
    '{}', 'https://www.msb.se/sv/rad-till-privatpersoner/brandsakerhet-i-hemmet/brandvarnare/', '2026-08-26', true, '2026-08-26T00:00:00Z'),
 
-  -- ---------- Modul D – Företagare (OVERIFIERAT, publiceras aldrig) ----------
+  -- ---------- Modul D - Företagare (OVERIFIERAT, publiceras aldrig) ----------
   ('arbetsgivardeklaration', 'foretagare', 'day_of_month',
    '{"day":12}', 'next_business_day', '{}',
    'Arbetsgivardeklaration',

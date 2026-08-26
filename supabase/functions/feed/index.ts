@@ -1,5 +1,5 @@
 // Genererar .ics-feeds live från Postgres. Att redigera en regel i Supabase Studio
-// uppdaterar feeden direkt – ingen omdeploy behövs.
+// uppdaterar feeden direkt - ingen omdeploy behövs.
 //
 //   GET /feed                       → alla publicerade moduler i en feed
 //   GET /feed/skatt-privat          → en modul
@@ -102,7 +102,7 @@ Deno.serve(async (req) => {
 
     const single = wanted.length === 1 ? modules.find((m) => m.id === wanted[0]) : undefined
     const calName = single
-      ? `${single.title} – Enheten för schemalagd verksamhet`
+      ? `${single.title} - Enheten för schemalagd verksamhet`
       : 'Enheten för schemalagd verksamhet'
     const calDesc = `Svenska deadlines i din kalender. ${DISCLAIMER}`
     const filename = `${single ? single.id : 'alla'}.ics`

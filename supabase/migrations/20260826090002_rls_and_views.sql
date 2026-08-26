@@ -44,7 +44,7 @@ create policy rules_public_read on rules
   );
 
 -- Admin får full skrivåtkomst (för kommande admin-UI). V1: redigering sker i Supabase
--- Studio med service-nyckeln, som kringgår RLS – ingen inloggning behövs ännu.
+-- Studio med service-nyckeln, som kringgår RLS - ingen inloggning behövs ännu.
 create policy modules_admin_all on modules
   for all using (is_admin()) with check (is_admin());
 create policy rules_admin_all on rules

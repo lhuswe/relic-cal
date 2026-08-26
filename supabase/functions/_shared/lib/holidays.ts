@@ -3,7 +3,7 @@
 // All datumaritmetik sker i UTC för att undvika tidszons- och sommartidsbuggar.
 // Ett "datum" är en Date satt till midnatt UTC; bara år/månad/dag används.
 
-/** Skapar ett datum vid midnatt UTC. `month` är 1–12. */
+/** Skapar ett datum vid midnatt UTC. `month` är 1-12. */
 export function ymd(year: number, month: number, day: number): Date {
   return new Date(Date.UTC(year, month - 1, day))
 }
@@ -50,7 +50,7 @@ export function easterSunday(year: number): Date {
   return ymd(year, month, day)
 }
 
-/** Lördagen i ett givet intervall (t.ex. midsommar 20–26 juni). */
+/** Lördagen i ett givet intervall (t.ex. midsommar 20-26 juni). */
 function saturdayBetween(year: number, month: number, fromDay: number, toDay: number): Date {
   for (let day = fromDay; day <= toDay; day++) {
     const date = ymd(year, month, day)
@@ -78,8 +78,8 @@ export function redDays(year: number): Set<string> {
     addDays(easter, 39), // Kristi himmelsfärds dag
     addDays(easter, 49), // Pingstdagen
     ymd(year, 6, 6), //   Sveriges nationaldag
-    saturdayBetween(year, 6, 20, 26), // Midsommardagen (lördag 20–26 juni)
-    allSaintsSaturday(year), //         Alla helgons dag (lördag 31 okt–6 nov)
+    saturdayBetween(year, 6, 20, 26), // Midsommardagen (lördag 20-26 juni)
+    allSaintsSaturday(year), //         Alla helgons dag (lördag 31 okt-6 nov)
     ymd(year, 12, 25), // Juldagen
     ymd(year, 12, 26), // Annandag jul
   ]
@@ -91,21 +91,21 @@ export function redDays(year: number): Set<string> {
 
 /** Alla helgons dag: lördagen mellan 31 oktober och 6 november. */
 function allSaintsSaturday(year: number): Date {
-  // Kandidater: 31 okt, samt 1–6 nov.
+  // Kandidater: 31 okt, samt 1-6 nov.
   const candidates = [ymd(year, 10, 31)]
   for (let day = 1; day <= 6; day++) candidates.push(ymd(year, 11, day))
   const sat = candidates.find((d) => weekday(d) === 6)
-  if (!sat) throw new Error(`Ingen lördag 31 okt–6 nov ${year}`)
+  if (!sat) throw new Error(`Ingen lördag 31 okt-6 nov ${year}`)
   return sat
 }
 
-/** Röd dag? (Söndagar räknas INTE som röda här – de fångas av vardagsregeln.) */
+/** Röd dag? (Söndagar räknas INTE som röda här - de fångas av vardagsregeln.) */
 export function isRedDay(date: Date): boolean {
   return redDays(date.getUTCFullYear()).has(formatDate(date))
 }
 
 /**
- * Vardag = måndag–fredag som inte är röd dag.
+ * Vardag = måndag-fredag som inte är röd dag.
  *
  * OBS: "helgdagsaftnar" (jul-, nyårs-, midsommar-, påskafton) behandlas INTE som
  * icke-vardagar här. Det följer specens uttryckliga definition. Vill vi senare

@@ -1,6 +1,6 @@
 // Regelmotor: regel → konkreta kalenderhändelser över ett rullande fönster.
 //
-// UID-strategi (specens viktigaste krav – determinism och stabilitet):
+// UID-strategi (specens viktigaste krav - determinism och stabilitet):
 //   - En händelse per år (fixed_date, nth_weekday, date_range):  {id}-{år}[-w{d}]
 //   - Flera per år (day_of_month, quarterly):                    {id}-{år}-{MM}[-w{d}]
 // UID:t nycklas på NOMINELLT år/månad, aldrig på det helgjusterade datumet, så att en
